@@ -5,8 +5,8 @@ def is_valid_sequence(dna):
     >>> is_valid_sequence('racc')
     False
     '''
-    for c in dna:
-        if not c in 'atcgATCG':
+    for c in dna.upper():
+        if not c in 'ATCG':
             return False
     return True;
         
@@ -15,7 +15,7 @@ def insert_sequence(dna1, dna2, index):
     >>> insert_sequence('CCGG', 'AT', 2)
     CCATGG
     '''
-    return dna1[:index] + dna2 + dna1[2:]
+    return dna1[0:index] + dna2 + dna1[inedx:get_length(dna1)]
     
 def get_length(dna):
     """ (str) -> int
